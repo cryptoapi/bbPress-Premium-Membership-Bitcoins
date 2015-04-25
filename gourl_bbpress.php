@@ -1,9 +1,9 @@
 <?php
 /*
-Plugin Name: 		GoUrl BBPRESS - Premium Membership Mode with Bitcoin Payments
+Plugin Name: 		GoUrl BBPRESS - Add Premium Membership with Bitcoin/Altcoin Payments
 Plugin URI: 		https://gourl.io/bbpress-premium-membership.html
-Description: 		This simple plugin will add Premium Membership Mode to bbPress Forum. You can mark some topics on your forum as Premium and can easily monetise your forum with Bitcoins. Pay to read bbPress Premium Topics and Replies, Pay to add new replies to the topic, Pay to create new topics on bbPress
-Version: 			1.0.0
+Description: 		This plugin will add Premium Membership and Bitcoin Gateway to bbPress 2.5+ Forum / Customer Support System. You can mark some topics on your forum/customer support system as Premium and can easily monetise it with Bitcoins/altcoins. Pay to read bbPress Premium Topics and Replies, Pay to add new replies to the topic, Pay to create new topics on bbPress
+Version: 			1.1.0
 Author: 			GoUrl.io
 Author URI: 		https://gourl.io
 License: 			GPLv2
@@ -313,7 +313,7 @@ if (!function_exists('gourl_bbp_gateway_load'))
 					$this->premium[$k] = intval($v); 
 				} 
 				
-				if (class_exists('gourlclass') && defined('GOURL') && defined('GOURL_ADMIN') && is_object($gourl) && true === version_compare(GOURL_VERSION, '1.2.11', '>='))
+				if (class_exists('gourlclass') && defined('GOURL') && defined('GOURL_ADMIN') && is_object($gourl) && true === version_compare(GOURL_VERSION, '1.3', '>='))
 				{
 						$this->payments 			= $gourl->payments(); 		// Activated Payments
 						$this->coin_names			= $gourl->coin_names(); 	// All Coins
@@ -451,6 +451,15 @@ if (!function_exists('gourl_bbp_gateway_load'))
 						$tmp .= "</tr>";
 					}
 					
+				}
+				elseif (class_exists('gourlclass') && defined('GOURL') && defined('GOURL_ADMIN') && is_object($gourl) && true === version_compare(GOURL_VERSION, '1.3', '<'))
+				{
+					$tmp .= "<tr valign='top'>";
+					$tmp .= "<th colspan='2'>";
+					$tmp .= "<h3 style='color:green'>".sprintf(__("Please install <a target='_blank' href='%s'>Bitcoin</a> Gateway", GOURLBB ), "https://bitcoin.org/")." -</h3>";
+					$tmp .= '<div class="error">' .sprintf(__( '<b>Your GoUrl Bitcoin Gateway <a href="%s">Main Plugin</a> version is too old. Requires 1.3 or higher version. Please <a href="%s">update</a> to latest version.</b>  &#160; &#160; &#160; &#160; Information: &#160; <a href="https://gourl.io/bitcoin-wordpress-plugin.html">Main Plugin Homepage</a> &#160; &#160; &#160; <a href="https://wordpress.org/plugins/gourl-bitcoin-payment-gateway-paid-downloads-membership/">WordPress.org Plugin Page</a>', GOURLBB ), GOURL_ADMIN.GOURL, admin_url("plugin-install.php?tab=search&type=term&s=GoUrl+Bitcoin+Payment+Gateway+Downloads")).'</div><br><br>';
+					$tmp .= "</th>";
+					$tmp .= "</tr>";
 				}
 				else
 				{
@@ -631,11 +640,11 @@ if (!function_exists('gourl_bbp_gateway_load'))
 				// Premium topic or not
 				$prem_topic = $this->is_premium_topic($post->ID);
 				
-				// Need user upgrade membership or not
-				$upgrade = $gourl->is_need_membership_upgrade();
+				// User have premium membership or not
+				$premium = $gourl->is_premium_user();
 					
 				// Only premium users can post reply
-				if ($upgrade && (($prem_topic && $this->premium["create_reply"]) || (!$prem_topic && $this->free["create_reply"])))
+				if (!$premium && (($prem_topic && $this->premium["create_reply"]) || (!$prem_topic && $this->free["create_reply"])))
 				{
 					$this->reply_box = true;
 					ob_end_flush();
@@ -694,11 +703,11 @@ if (!function_exists('gourl_bbp_gateway_load'))
 				// if Admin/Moderator on Forum
 				if ($this->admin_forum_roles()) return true;
 				
-				// Need user upgrade membership or not
-				$upgrade = $gourl->is_need_membership_upgrade();
-				
+				// User have premium membership or not
+				$premium = $gourl->is_premium_user();
+								
 				// Only premium users can post reply
-				if ($upgrade && $this->create_topics)
+				if (!$premium && $this->create_topics)
 				{
 					$this->topic_box = true;
 					ob_end_flush();
@@ -775,11 +784,11 @@ if (!function_exists('gourl_bbp_gateway_load'))
 				// Not valid topic id
 				if (!intval($id)) return $content;
 				
-				// 2. Need user upgrade membership or not
-				$upgrade = $gourl->is_need_membership_upgrade();
-				
+				// 2. User have premium membership or not
+				$premium = $gourl->is_premium_user();
+								
 				// Don't need upgrade 
-				if (!$upgrade) return $content;
+				if ($premium) return $content;
 				
 				// 3. Logged user == reply owner ?
 				$p  = get_post( $post_id );
@@ -865,6 +874,6 @@ if (!function_exists('gourl_bbp_gateway_load'))
 		if (class_exists('bbPress')) new GoUrl_Bbpress;
 	
 	}
-	// end gourl_bbp_gateway_load()     
+	// end gourl_bbp_gateway_load()                   
 	
 }

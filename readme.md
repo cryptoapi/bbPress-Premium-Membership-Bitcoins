@@ -1,13 +1,13 @@
 
-GoUrl BBPRESS - Premium Membership Mode with Bitcoin Payments
+GoUrl BBPRESS - Add Premium Membership with Bitcoin/Altcoin Payments
 -----------------------------------------------------------
 
-Version 1.0
+Version 1.1.0
 
-**Provides a Premium Membership Mode and Bitcoin Payment Gateway for bbPress 2.5+**
+**It will add Premium Membership and Bitcoin/Altcoin Gateway to bbPress 2.5+ Forum & Customer Support System**
 
-This simple plugin will add Premium Membership Mode to bbPress Forum. You can mark some topics on your forum as Premium and can easily monetise your forum with Bitcoins. Pay to read bbPress Premium Topics and Replies, Pay to add new replies to the topic, Pay to create new topics on bbPress. 
-Accept Bitcoin, Litecoin, Speedcoin, Dogecoin, Paycoin, Darkcoin, Reddcoin, Potcoin, Feathercoin, Vertcoin, Vericoin on bbPress Online
+It will add Premium Membership and Bitcoin/Altcoin Gateway to your bbPress Forum & Customer Support System. You can mark some topics on your forum/customer support system as Premium and can easily monetise it with Bitcoins/altcoins. Pay to read bbPress Premium Topics and Replies, Pay to add new replies to the topic, Pay to create new topics on bbPress. It integrated with [GoUrl Pay-Per-Membership](https://wordpress.org/plugins/gourl-bitcoin-payment-gateway-paid-downloads-membership/).
+Accept Bitcoin, Litecoin, Paycoin, Dogecoin, Dash, Speedcoin, Reddcoin, Potcoin, Feathercoin, Vertcoin, Vericoin, Peercoin on bbPress Online
 
 * Author URI: [https://gourl.io](https://gourl.io)
 * Plugin Page: [https://gourl.io/bbpress-premium-membership.html](https://gourl.io/bbpress-premium-membership.html)
@@ -15,7 +15,7 @@ Accept Bitcoin, Litecoin, Speedcoin, Dogecoin, Paycoin, Darkcoin, Reddcoin, Potc
 * Screenshots: [https://gourl.io/bbpress-premium-membership.html#screenshot](https://gourl.io/bbpress-premium-membership.html#screenshot)
 * Requires at least: Wordpress 3.5
 * Tested up to: Wordpress 4.2
-* Stable Tag: 1.0.0
+* Stable Tag: 1.1.0
 * License: GNU Version 2 or Any Later Version
 
 
@@ -23,7 +23,7 @@ Accept Bitcoin, Litecoin, Speedcoin, Dogecoin, Paycoin, Darkcoin, Reddcoin, Potc
 
 * 100% Free Open Source Plugin on [Github.com](https://github.com/cryptoapi/bbPress-Premium-Membership-Bitcoins)
 * Provides a Premium Membership Mode and Payment Gateway for [bbPress 2.5 or higher](https://wordpress.org/plugins/bbpress/)
-* Accept Bitcoin, Litecoin, Speedcoin, Dogecoin, Paycoin, Darkcoin, Reddcoin, Potcoin, Feathercoin, Vertcoin, Vericoin payments in bbPress
+* Accept Bitcoin, Litecoin, Paycoin, Dogecoin, Dash, Speedcoin, Reddcoin, Potcoin, Feathercoin, Vertcoin, Vericoin, Peercoin payments in bbPress
 * No Monthly Fee, Transaction Fee from 0%
 * Pay to read bbPress Premium Topics and Replies
 * Pay to add new replies / create new Topics
@@ -70,6 +70,4 @@ bbPress Premium Topic
    
 # ![bbPress-Topic](https://gourl.io/images/bbpress/screenshot-2.png)
        
- 
-
  
