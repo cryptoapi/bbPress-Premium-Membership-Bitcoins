@@ -10,7 +10,8 @@ Stable Tag: 1.1.0
 License: GNU Version 2 or Any Later Version
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-It will add Premium Membership and Bitcoin/Altcoin Gateway to bbPress Forum & Customer Support. Mark some topics as Premium and monetise it.
+It will add Premium Membership and Bitcoin/Altcoin Gateway to bbPress Forum & Customer Support. Mark some topics as Premium and monetise it. 
+You can add premium user support to your web site using bbPress. Any user can place questions (create new topic in bbPress), and only paid/premium users will see your answers.
 
 
 == Description ==
@@ -92,6 +93,4 @@ Spanish payment box localisation
 
 = 1.0.0 =
 Initial Release
- 
-    
  
