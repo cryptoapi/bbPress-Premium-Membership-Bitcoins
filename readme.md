@@ -2,7 +2,7 @@
 GoUrl BBPRESS - Add Premium Membership with Bitcoin/Altcoin Payments
 -----------------------------------------------------------
 
-Version 1.1.0
+Version 1.1.1
 
 **It will add Premium Membership and Bitcoin/Altcoin Gateway to bbPress 2.5+ Forum & Customer Support System**
 
@@ -16,7 +16,7 @@ Accept Bitcoin, Litecoin, Paycoin, Dogecoin, Dash, Speedcoin, Reddcoin, Potcoin,
 * Screenshots: [https://gourl.io/bbpress-premium-membership.html#screenshot](https://gourl.io/bbpress-premium-membership.html#screenshot)
 * Requires at least: Wordpress 3.5
 * Tested up to: Wordpress 4.2
-* Stable Tag: 1.1.0
+* Stable Tag: 1.1.1
 * License: GNU Version 2 or Any Later Version
 
 

@@ -6,7 +6,7 @@ Author URI: https://gourl.io
 Tags: bbpress, bitcoin, bitcoins, bitcoin payment, bitcoin payments, gourl, cryptocurrency, btc, paypal, bbpress, bbpress payments, bbpress paypal, bbpress premium membership, bbpress membership, bbpress bitcoin, discussion, buddypress, forums, forum, Akismet, discussion, forums, multisite, support, theme, dogecoin, litecoin, reddcoin, feathercoin, vertcoin, potcoin, speedcoin, dash, vericoin, paycoin, peercoin
 Requires at least: 3.5
 Tested up to: 4.2
-Stable Tag: 1.1.0
+Stable Tag: 1.1.1
 License: GNU Version 2 or Any Later Version
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -32,6 +32,7 @@ bbPress Premium Membership Features -
 * Direct Integration on your website, no external payment pages opens (as other payment gateways offer). 
 * You will see the bitcoin/altcoin payment statistics in one common table on your website. 
 * No Chargebacks, Global, Secure. All in automatic mode.
+* If you intend plugin to be used in a language other than English, see the [Language Translations page](https://gourl.io/languages.html)
 * [Free Tech Support](https://gourl.io/view/contact/Contact_Us.html) for You
 
 
@@ -86,13 +87,14 @@ In the search field type "GoUrl bbPress" and click Search Plugins. Once you've f
 
 
 
-== Changelog == 
+== Changelog ==
+
+= 1.1.1 =
+Localisation - You can easy change/localize any text in plugin
 
 = 1.1.0 =
-Added Peercoin 
-Spanish payment box localisation
+* Add Peercoin [PPC] cryptocurrency
+* Add Spanish Payment Box translation
 
 = 1.0.0 =
 Initial Release
-   
- 

@@ -1,0 +1,477 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: GoUrl BBPRESS - Add Premium Membership with Bitcoin/"
+"Altcoin Payments\n"
+"POT-Creation-Date: 2015-05-26 12:00-0000\n"
+"PO-Revision-Date: 2015-05-26 12:00-0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: ru\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.7.6\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
+"_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.js\n"
+
+#: gourl_bbpress.php:62
+msgid "Read First Post in the Topic"
+msgstr "Читать первый пост в теме"
+
+#: gourl_bbpress.php:62
+msgid "Read Comments/Replies"
+msgstr "Читать комментарии/ответы"
+
+#: gourl_bbpress.php:62
+msgid "Add Comments/Replies"
+msgstr "Добавить комментарии/ответы"
+
+#: gourl_bbpress.php:64
+msgid "Premium:"
+msgstr "Премиум:"
+
+#: gourl_bbpress.php:65
+msgid "You must be logged in to view this post."
+msgstr "Вы должны быть авторизованы для просмотра этого поста."
+
+#: gourl_bbpress.php:66
+msgid "You need to have a premium account to view this post."
+msgstr "Вам нужно иметь премиум-аккаунт для просмотра этого поста."
+
+#: gourl_bbpress.php:68
+msgid "You must be logged in to view this response."
+msgstr "Вы должны авторизоваться для просмотра этого ответа."
+
+#: gourl_bbpress.php:69
+msgid "You need to have a premium account to view this response."
+msgstr "Вам нужно иметь премиум-аккаунт для просмотра этого ответа."
+
+#: gourl_bbpress.php:71
+msgid "You must be logged in to create new topics."
+msgstr "Вы должны авторизоваться для создания новых тем."
+
+#: gourl_bbpress.php:72
+#, php-format
+msgid ""
+"You need to have a premium account to create new topic. Buy premium "
+"membership using secure anonymous payments with Bitcoins. What is <a "
+"href='%s'>Bitcoin</a>?"
+msgstr ""
+"Вам нужно иметь премиум-аккаунт для создания новой темы. Купить премиум-"
+"членство, используя безопасные анонимные платежи с биткоинами. Что такое <a "
+"href='%s'>Биткоин</a>?"
+
+#: gourl_bbpress.php:74
+msgid "You must be logged in to reply to this topic."
+msgstr "Вы должны войти в систему для ответа в этой теме."
+
+#: gourl_bbpress.php:75
+#, php-format
+msgid ""
+"You need to have a premium account to post messages on this topic. Buy "
+"premium membership using secure anonymous payments with Bitcoins. What is <a "
+"href='%s'>Bitcoin</a>?"
+msgstr ""
+"Вам нужно иметь премиум-аккаунт для размещения сообщений в этой теме. Купить "
+"премиум-аккаунт, используя безопасные анонимные платежи с биткоинами. Что "
+"такое <a href='%s'>Биткоин</a>?"
+
+#: gourl_bbpress.php:77 gourl_bbpress.php:78
+msgid "Join today!"
+msgstr "Присоединяйтесь сегодня!"
+
+#: gourl_bbpress.php:80
+msgid "Reply"
+msgstr "Ответить"
+
+#: gourl_bbpress.php:81
+msgid "New Topic"
+msgstr "Новая Тема"
+
+#: gourl_bbpress.php:84
+msgid "Add to Premium Topic Title"
+msgstr "Добавить в название премиум темы"
+
+#: gourl_bbpress.php:85
+msgid "Topic - First Post (Not Logged User)"
+msgstr "Тема - первый пост (не зарегистрированный пользователь)"
+
+#: gourl_bbpress.php:86
+msgid "Topic - First Post (Logged User)"
+msgstr "Тема - первый пост (зарегистрированный пользователь)"
+
+#: gourl_bbpress.php:88
+msgid "Topic - Replies (Not Logged User)"
+msgstr "Тема - ответы (не зарегистрированный пользователь)"
+
+#: gourl_bbpress.php:89
+msgid "Topic - Replies (Logged User)"
+msgstr "Тема - ответы (зарегистрированный пользователь)"
+
+#: gourl_bbpress.php:91
+msgid "Create Topic (Not Logged User)"
+msgstr "Создание темы (не зарегистрированный пользователь)"
+
+#: gourl_bbpress.php:92
+msgid "Create Topic (Logged User)"
+msgstr "Создание темы (зарегистрированный пользователь)"
+
+#: gourl_bbpress.php:94
+msgid "Add Reply (Not Logged User)"
+msgstr "Добавить ответ (не зарегистрированный пользователь)"
+
+#: gourl_bbpress.php:95
+msgid "Add Reply (Logged User)"
+msgstr "Добавить ответ (зарегистрированный пользователь)"
+
+#: gourl_bbpress.php:97
+msgid "Login Link Text"
+msgstr "Текст ссылки для входа на сайт"
+
+#: gourl_bbpress.php:98
+msgid "Payment Link Text"
+msgstr "Текст ссылки оплаты"
+
+#: gourl_bbpress.php:100
+msgid "Reply Button"
+msgstr "Кнопка Ответа"
+
+#: gourl_bbpress.php:101
+msgid "New Topic Button"
+msgstr "Новая тема кнопка"
+
+#: gourl_bbpress.php:162
+msgid "Settings"
+msgstr "Настройки"
+
+#: gourl_bbpress.php:176
+msgid "Premium Settings"
+msgstr "Премиум Настройки"
+
+#: gourl_bbpress.php:178 gourl_bbpress.php:513
+msgid "Premium"
+msgstr "Премиум"
+
+#: gourl_bbpress.php:202 gourl_bbpress.php:217
+msgid "Premium Topic"
+msgstr "Премиум тема"
+
+#: gourl_bbpress.php:218
+msgid "No Premium"
+msgstr "Не премиум"
+
+#: gourl_bbpress.php:238
+msgid "No"
+msgstr "Нет"
+
+#: gourl_bbpress.php:238
+msgid "Yes"
+msgstr "Да"
+
+#: gourl_bbpress.php:239
+#, php-format
+msgid "<a href='%s'>More settings</a>"
+msgstr "<a href='%s'>Ещё настройки</a>"
+
+#: gourl_bbpress.php:415
+msgid "BBPRESS Forum - Premium Settings"
+msgstr "BBPRESS форум - Премиум Настройки"
+
+#: gourl_bbpress.php:416
+msgid "Bitcoin Payment Gateway for Your Website"
+msgstr "Биткоин платёжный шлюз для вашего сайта"
+
+#: gourl_bbpress.php:419
+msgid "Settings has been saved <strong>successfully</strong>"
+msgstr "Настройки <strong>успешно</strong> сохранены"
+
+#: gourl_bbpress.php:430
+#, php-format
+msgid ""
+"You can mark some topics on your bbPress Forum / Customer support system as "
+"<a href='%s'>Premium</a> and can easily monetise your forum with <a "
+"href='%s'>Bitcoin / Altcoins</a>. Pay to read bbPress <a href='%s'>Premium "
+"Topics</a> and read comments/replies, Pay to add new replies to the premium "
+"topic, Pay to create new topics on bbPress"
+msgstr ""
+"Вы можете пометить некоторые темы на вашем bbPress форуме / Системе "
+"поддержки клиентов, как <a href='%s'>премиум</a> и легко монетизировать ваш "
+"форум с <a href='%s'>биткоинами / альткоинами</a>. Оплата за чтение bbPress "
+"<a href='%s'>Премиум тем</a>, комментариев и ответов, оплата за добавление "
+"новых ответов в премиум тему, оплата за создание новых тем на bbPress"
+
+#: gourl_bbpress.php:431
+#, php-format
+msgid "Accept %s membership payments online in bbPress."
+msgstr "Принимайте %s платежи онлайн в bbPress."
+
+#: gourl_bbpress.php:433
+#, php-format
+msgid ""
+"If you want to use GoUrl bbPress Premium Membership plugin in a language "
+"other than English, see the page <a href='%s'>Languages and Translations</a>"
+msgstr ""
+"Если вы собираетесь использовать GoUrl bbPress Премиум членство плагин на "
+"другом языке, чем русский, смотрите страницу <a href='%s'>языки и переводы</"
+"a>"
+
+#: gourl_bbpress.php:435
+#, php-format
+msgid "<a href='%s'>Plugin Homepage</a> & <a href='%s'>Screenshots &#187;</a>"
+msgstr ""
+"<a href='%s'>Домашняя страница плагина</a> & <a href='%s'>скриншоты »</a>"
+
+#: gourl_bbpress.php:443
+msgid "Premium Users"
+msgstr "Премиум пользователи"
+
+#: gourl_bbpress.php:444
+msgid "List of All Premium Users"
+msgstr "Список всех премиум пользователей"
+
+#: gourl_bbpress.php:448
+msgid "New Subscription"
+msgstr "Новая подписка"
+
+#: gourl_bbpress.php:449
+msgid "Manually create user"
+msgstr "Вручную добавить пользователю"
+
+#: gourl_bbpress.php:449
+msgid "Premium Membership"
+msgstr "Премиум членство"
+
+#: gourl_bbpress.php:453
+msgid "Payments"
+msgstr "Платежи"
+
+#: gourl_bbpress.php:454
+#, php-format
+msgid "All <a class='gourlbblink' href='%s'>Membership Payments</a>"
+msgstr "Все <a class='gourlbblink' href='%s'>платежи за членство на сайте</a>"
+
+#: gourl_bbpress.php:464
+msgid "Important"
+msgstr "Важно"
+
+#: gourl_bbpress.php:464
+#, php-format
+msgid ""
+"Please change settings to <b>Lock Page Level</b>: <a href='%s'>Registered "
+"Subscribers/Contributors</a> or higher. <a href='%s'>Goto &#187;</a>"
+msgstr ""
+"Пожалуйста, измените настройки <b>Уровня блокировки страницы</b>: <a "
+"href='%s'>Registered Subscribers/Contributors</a> или выше. <a "
+"href='%s'>Перейти »</a>"
+
+#: gourl_bbpress.php:476 gourl_bbpress.php:489
+#, php-format
+msgid "Please install <a target='_blank' href='%s'>Bitcoin</a> Gateway"
+msgstr "Пожалуйста, установите <a target='_blank' href='%s'>Биткоин</a> шлюз"
+
+#: gourl_bbpress.php:477
+#, php-format
+msgid ""
+"Your GoUrl Bitcoin Gateway <a href='%s'>Main Plugin</a> version is too old. "
+"Requires 1.3.2 or higher version. Please <a href='%s'>update</a> to latest "
+"version."
+msgstr ""
+"Версия <a href='%s'>GoUrl главного плагина</a> слишком стара. Требуется "
+"версия 1.3.2 или выше. Пожалуйста, <a href='%s'>обновите</a> до последней "
+"версии."
+
+#: gourl_bbpress.php:490
+#, php-format
+msgid ""
+"You need to install GoUrl Bitcoin Gateway Main Plugin also. Go to - <a "
+"href='%s'>Automatic installation</a> or <a href='%s'>Manual</a>."
+msgstr ""
+"Вам нужно установить основной GoUrl Биткоин Плагин для WP также. Перейти - "
+"<a href='%s'>Автоматическая установка</a> или <a href='%s'>ручная установка</"
+"a>."
+
+#: gourl_bbpress.php:491
+msgid "Information"
+msgstr "Информация"
+
+#: gourl_bbpress.php:491
+msgid "Main Plugin Homepage"
+msgstr "Страница главного плагина"
+
+#: gourl_bbpress.php:492
+msgid "WordPress.org Plugin Page"
+msgstr "Страница плагина на WordPress.org"
+
+#: gourl_bbpress.php:503
+msgid "New Topics in bbPress"
+msgstr "Новые темы в bbPress"
+
+#: gourl_bbpress.php:507
+msgid "Who can Create Topics"
+msgstr "Кто может создавать темы"
+
+#: gourl_bbpress.php:508 gourl_bbpress.php:526 gourl_bbpress.php:539
+msgid "All users"
+msgstr "Все пользователи"
+
+#: gourl_bbpress.php:508 gourl_bbpress.php:526 gourl_bbpress.php:539
+msgid "Premium Users only"
+msgstr "Премиум пользователи только"
+
+#: gourl_bbpress.php:512
+msgid "Default New Topic"
+msgstr "Новая тема по умолчанию"
+
+#: gourl_bbpress.php:513
+msgid "Non-Premium"
+msgstr "Не премиум"
+
+#: gourl_bbpress.php:519
+msgid "Non-premium Topics in bbPress"
+msgstr "Не премиум темы в bbPress"
+
+#: gourl_bbpress.php:532
+msgid "Premium Topics in bbPress"
+msgstr "Премиум темы в bbPress"
+
+#: gourl_bbpress.php:548
+msgid "Page"
+msgstr "Страница"
+
+#: gourl_bbpress.php:552
+msgid "Payment/Checkout Page"
+msgstr "Страница оплаты"
+
+#: gourl_bbpress.php:556
+msgid "-- Choose One --"
+msgstr "-- Выберите один --"
+
+#: gourl_bbpress.php:561
+msgid "edit page"
+msgstr "редактирование"
+
+#: gourl_bbpress.php:562
+msgid "view page"
+msgstr "просмотр страницы"
+
+#: gourl_bbpress.php:564
+msgid "Include the shortcode"
+msgstr "Включить шорткод"
+
+#: gourl_bbpress.php:570
+msgid "Payment Box"
+msgstr "Payment Box"
+
+#: gourl_bbpress.php:574 gourl_bbpress.php:575
+msgid "per"
+msgstr "за"
+
+#: gourl_bbpress.php:578
+msgid "Price"
+msgstr "Цена"
+
+#: gourl_bbpress.php:583
+msgid "Upgrade Membership For"
+msgstr "Обновление членства для"
+
+#: gourl_bbpress.php:584
+#, php-format
+msgid ""
+"Users with following permissions/roles require premium membership -<br>Forum "
+"Roles: &#160; Spectator and Participant<br>Website Roles: &#160; %s"
+msgstr ""
+"Пользователи со следующими разрешениями/ролями требуют премиум членства -"
+"<br>Форум роли: Spectator and Participant (зрители и участники)<br>Вебсайт "
+"роли: &#160; %s"
+
+#: gourl_bbpress.php:588
+msgid "Payment Box Style"
+msgstr "Стиль Payment Box"
+
+#: gourl_bbpress.php:589
+#, php-format
+msgid ""
+"Payment Box <a target='_blank' href='%s'>sizes</a> and border <a "
+"target='_blank' href='%s'>shadow</a> you can change <a class='gourlbblink' "
+"href='%s'>here</a>"
+msgstr ""
+"Payment Box <a target='_blank' href='%s'>размеры</a> и стиль <a "
+"target='_blank' href='%s'>с тенями</a> вы можете изменить <a "
+"class='gourlbblink' href='%s'>здесь</a>"
+
+#: gourl_bbpress.php:595
+msgid "Customize Texts"
+msgstr "Настройка текстов"
+
+#: gourl_bbpress.php:606
+#, php-format
+msgid "Default: %s"
+msgstr "По умолчанию: %s"
+
+#: gourl_bbpress.php:614
+msgid "Save Settings"
+msgstr "Сохранить настройки"
+
+#: gourl_bbpress.php:637
+#, php-format
+msgid ""
+"If you like <b>bbPress Forum - Premium Membership Mode</b> please leave us a "
+"%s rating on %s. A huge thank you from GoUrl in advance!"
+msgstr ""
+"Если вам нравится <b>bbPress Форум  - премиум членство</b> пожалуйста, "
+"оставьте нам рейтинг %s на %s. Огромное спасибо вам от GoUrl заранее!"
+
+#~ msgid ""
+#~ "You can mark some topics on your bbPress Forum / Customer support system "
+#~ "as <a href='%s'>Premium</a> and can easily monetise your forum with <a "
+#~ "href='%s'>Bitcoin / Altcoins</a>.<br>Pay to read bbPress <a "
+#~ "href='%s'>Premium Topics</a> and read comments/replies, Pay to add new "
+#~ "replies to the premium topic, Pay to create new topics on bbPress"
+#~ msgstr ""
+#~ "Вы можете пометить некоторые темы на вашем bbPress форуме / Системе "
+#~ "поддержки клиентов, как <a href='%s'>премиум</a> и легко монетизировать "
+#~ "ваш форум с <a href='%s'>биткоинами / альткоинами</a>.<br>Оплата за "
+#~ "чтение bbPress <a href='%s'>Премиум темы</a>, комментариев и ответов, "
+#~ "оплата за добавление новых ответов в премиум тему, оплата за создание "
+#~ "новых тем на bbPress"
+
+#~ msgid ""
+#~ "You can mark some topics on your bbPress Forum as <a href='%s'>Premium</"
+#~ "a> and can easily monetise your forum with <a href='%s'>Bitcoin / "
+#~ "Altcoins</a>.<br>Pay to read bbPress <a href='%s'>Premium Topics</a> and "
+#~ "read comments/replies, Pay to add new replies to the premium topic, Pay "
+#~ "to create new topics on bbPress"
+#~ msgstr ""
+#~ "Вы можете пометить некоторые темы на вашем bbPress форуме как <a "
+#~ "href='%s'>премиум</a> и легко монетизировать ваш форум с <a "
+#~ "href='%s'>биткоинами / альткоинами</a>.<br>Оплата за чтение bbPress <a "
+#~ "href='%s'>Премиум темы</a>, комментариев и ответов, оплата за добавление "
+#~ "новых ответов в премиум тему, оплата за создание новых тем на bbPress"
+
+#~ msgid ""
+#~ "You can mark some topics on your bbPress Forum as <a href='%s'>Premium</"
+#~ "a> and can easily monetise your forum with <a href='%s'>Bitcoin / "
+#~ "Altcoins</a>.<br>Pay to read bbPress <a href='%s'>Premium Topics</a> and "
+#~ "read comments/replies, Pay to add new replies to the topic, Pay to create "
+#~ "new topics on bbPress"
+#~ msgstr ""
+#~ "Вы можете пометить некоторые темы на вашем bbPress форум как <a "
+#~ "href='%s'>премиум</a> и легко монетизировать ваш форум с <a "
+#~ "href='%s'>биткоинами / альткоинами</a>.<br>Оплата за чтение bbPress <a "
+#~ "href='%s'>Премиум темы</a>, комментариев и ответов, оплата за добавление "
+#~ "новых ответов в премиум тему, оплата за создание новых тем на bbPress"
+
+#~ msgid ""
+#~ "Users with following permissions/roles require premium membership -"
+#~ "<br>Forum Roles: &#160; Spectator and Participant<br>with Website Roles"
+#~ msgstr ""
+#~ "Пользователи со следующими разрешениями/ролями требуют премиум членства -"
+#~ "<br>Форум роли: Spectator and Participant (зрители и участники)<br>с "
+#~ "ролями на веб-сайте"

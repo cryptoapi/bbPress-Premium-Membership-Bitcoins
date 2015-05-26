@@ -3,7 +3,7 @@
 Plugin Name: 		GoUrl BBPRESS - Add Premium Membership with Bitcoin/Altcoin Payments
 Plugin URI: 		https://gourl.io/bbpress-premium-membership.html
 Description: 		This plugin will add Premium Membership and Bitcoin Gateway to bbPress 2.5+ Forum / Customer Support System. You can mark some topics on your forum/customer support system as Premium and can easily monetise it with Bitcoins/altcoins. Pay to read bbPress Premium Topics and Replies, Pay to add new replies to the topic, Pay to create new topics on bbPress
-Version: 			1.1.0
+Version: 			1.1.1
 Author: 			GoUrl.io
 Author URI: 		https://gourl.io
 License: 			GPLv2
@@ -14,19 +14,29 @@ GitHub Plugin URI: 	https://github.com/cryptoapi/bbPress-Premium-Membership-Bitc
 
 if (!defined( 'ABSPATH' )) exit;  // Exit if accessed directly in wordpress
 
-if (!function_exists('gourl_bbp_gateway_load'))
+if (!function_exists('gourl_bb_gateway_load'))
 {
 	// gateway load
-	add_action( 'plugins_loaded', 'gourl_bbp_gateway_load', 20);
+	add_action( 'plugins_loaded', 	'gourl_bb_gateway_load', 20);
+	add_action( 'plugins_loaded', 	'gourl_bb_load_textdomain' );
 	
-	DEFINE('GOURLBB', "bbpress-gourl");
+	DEFINE('GOURLBB', "gourl-bbpress");
 	
-	function gourl_bbp_gateway_load()
+	
+	
+	function gourl_bb_load_textdomain()
+	{
+		load_plugin_textdomain( GOURLBB, false, dirname( plugin_basename( __FILE__ ) ) . '/languages' );
+	}
+	
+	
+	
+	function gourl_bb_gateway_load()
 	{
 		class GoUrl_Bbpress
 		{
 			private $save_flag  	= false;
-			private $fields 		= array("read_topic" => "Read First Post in the Topic", "read_reply" => "Read Comments/Replies", "create_reply" => "Add Comments/Replies");
+			private $fields 		= array();
 			private $free			= array();
 			private $premium		= array();
 			private $reply_box 		= false;
@@ -38,50 +48,8 @@ if (!function_exists('gourl_bbp_gateway_load'))
 			private $create_topics 	= 0;
 			private $create_premium = 0;
 			private $checkout_page 	= 0;
-			
-			// localization
-			private $texts 	= array("premium"		=> "Premium:",
-									
-									"read_topic" 	=> "You must be logged in to view this post.",
-									"read_topic2"	=> "You need to have a premium account to view this post.",
-							
-									"read_reply"	=> "You must be logged in to view this response.",
-									"read_reply2"	=> "You need to have a premium account to view this response.",
-							
-									"create_topic"	=> 'You must be logged in to create new topics.',
-									"create_topic2"	=> 'You need to have a premium account to create new topic. Buy premium membership using secure anonymous payments with Bitcoins. What is <a href="https://bitcoin.org">Bitcoin</a>?',
-					
-									"create_reply"	=> 'You must be logged in to reply to this topic.',
-									"create_reply2"	=> 'You need to have a premium account to post messages on this topic. Buy premium membership using secure anonymous payments with Bitcoins. What is <a href="https://bitcoin.org">Bitcoin</a>?',
-					
-									"login_text"	=> "Join today!",
-									"join_text"		=> "Join today!",
-					
-									"btn_reply"		=> "Reply",
-									"btn_topic"		=> "New Topic"
-											
-							);
-			
-			private $texts2 = array("premium"		=> "Add to Premium Topic Title",
-									
-									"read_topic" 	=> "Topic - First Post (Not Logged User)",
-									"read_topic2"	=> "Topic - First Post (Logged User)",
-							
-									"read_reply" 	=> "Topic - Replies (Not Logged User)",
-									"read_reply2"	=> "Topic - Replies (Logged User)",
-							
-									"create_topic"	=> "Create Topic (Not Logged User)",
-									"create_topic2"	=> "Create Topic (Logged User)",
-					
-									"create_reply"	=> "Add Reply (Not Logged User)",
-									"create_reply2"	=> "Add Reply (Logged User)",
-					
-									"login_text"	=> "Login Link Text",	
-									"join_text"		=> "Payment Link Text",	
-					
-									"btn_reply"		=> "Reply Button",
-									"btn_topic"		=> "New Topic Button"
-			);
+			private $texts 			= array();
+			private $texts2 		= array();
 				
 			
 			
@@ -90,6 +58,51 @@ if (!function_exists('gourl_bbp_gateway_load'))
 			*/
 			public function __construct()
 			{
+				// Init
+				$this->fields = array("read_topic" 	=> __("Read First Post in the Topic", GOURLBB ), "read_reply" => __("Read Comments/Replies", GOURLBB ), "create_reply" => __("Add Comments/Replies", GOURLBB ));
+				
+				$this->texts = array("premium"		=> __("Premium:", GOURLBB ),
+									"read_topic" 	=> __("You must be logged in to view this post.", GOURLBB ),
+									"read_topic2"	=> __("You need to have a premium account to view this post.", GOURLBB ),
+										
+									"read_reply"	=> __("You must be logged in to view this response.", GOURLBB ),
+									"read_reply2"	=> __("You need to have a premium account to view this response.", GOURLBB ),
+										
+									"create_topic"	=> __('You must be logged in to create new topics.', GOURLBB ),
+									"create_topic2"	=> sprintf(__("You need to have a premium account to create new topic. Buy premium membership using secure anonymous payments with Bitcoins. What is <a href='%s'>Bitcoin</a>?", GOURLBB ), "https://bitcoin.org"),
+										
+									"create_reply"	=> __('You must be logged in to reply to this topic.', GOURLBB ),
+									"create_reply2"	=> sprintf(__("You need to have a premium account to post messages on this topic. Buy premium membership using secure anonymous payments with Bitcoins. What is <a href='%s'>Bitcoin</a>?", GOURLBB ), "https://bitcoin.org"),
+										
+									"login_text"	=> __("Join today!", GOURLBB ),
+									"join_text"		=> __("Join today!", GOURLBB ),
+										
+									"btn_reply"		=> __("Reply", GOURLBB ),
+									"btn_topic"		=> __("New Topic", GOURLBB )
+							);
+				
+				$this->texts2 = array("premium"		=> __("Add to Premium Topic Title", GOURLBB ),
+									"read_topic" 	=> __("Topic - First Post (Not Logged User)", GOURLBB ),
+									"read_topic2"	=> __("Topic - First Post (Logged User)", GOURLBB ),
+										
+									"read_reply" 	=> __("Topic - Replies (Not Logged User)", GOURLBB ),
+									"read_reply2"	=> __("Topic - Replies (Logged User)", GOURLBB ),
+										
+									"create_topic"	=> __("Create Topic (Not Logged User)", GOURLBB ),
+									"create_topic2"	=> __("Create Topic (Logged User)", GOURLBB ),
+										
+									"create_reply"	=> __("Add Reply (Not Logged User)", GOURLBB ),
+									"create_reply2"	=> __("Add Reply (Logged User)", GOURLBB ),
+										
+									"login_text"	=> __("Login Link Text", GOURLBB ),
+									"join_text"		=> __("Payment Link Text", GOURLBB ),
+										
+									"btn_reply"		=> __("Reply Button", GOURLBB ),
+									"btn_topic"		=> __("New Topic Button", GOURLBB )
+							);
+				
+
+				
 				$this->def = $this->texts;
 				
 				if (is_admin()) 
@@ -221,9 +234,9 @@ if (!function_exists('gourl_bbp_gateway_load'))
 				
 				$premium = $this->is_premium_topic( $post->ID );
 				
-				$tmp  = '<strong>Premium Topic ?</strong> &#160; &#160; ';
+				$tmp  = '<strong>'.__("Premium Topic", GOURLBB).' ?</strong> &#160; &#160; ';
 				$tmp .= '<input type="radio" name="'.GOURLBB.'premium_topic" value="0"'.$this->chk($premium, 0).'> '.__('No', GOURLBB ).' &#160; &#160; <input type="radio" name="'.GOURLBB.'premium_topic" value="1"'.$this->chk($premium, '1').'> '.__('Yes', GOURLBB );
-				$tmp .= '<p>'.sprintf(__('<a href="%s">More settings</a>', GOURLBB ), 'edit.php?post_type=forum&page=bbpress_premium') . '</p>';
+				$tmp .= '<p>'.sprintf(__("<a href='%s'>More settings</a>", GOURLBB), 'edit.php?post_type=forum&page=bbpress_premium') . '</p>';
 					
 				echo $tmp;
 			}
@@ -313,7 +326,7 @@ if (!function_exists('gourl_bbp_gateway_load'))
 					$this->premium[$k] = intval($v); 
 				} 
 				
-				if (class_exists('gourlclass') && defined('GOURL') && defined('GOURL_ADMIN') && is_object($gourl) && true === version_compare(GOURL_VERSION, '1.3', '>='))
+				if (class_exists('gourlclass') && defined('GOURL') && defined('GOURL_ADMIN') && is_object($gourl) && true === version_compare(GOURL_VERSION, '1.3.2', '>='))
 				{
 						$this->payments 			= $gourl->payments(); 		// Activated Payments
 						$this->coin_names			= $gourl->coin_names(); 	// All Coins
@@ -414,11 +427,13 @@ if (!function_exists('gourl_bbp_gateway_load'))
 				$tmp .= "<tr valign='top'>";
 				$tmp .= "<th colspan='2'>";
 				$tmp .= "<p>";
-				$tmp .= sprintf(__('You can mark some topics on your bbPress Forum as <a href="%s">Premium</a> and can easily monetise your forum with <a href="https://gourl.io/#coins">Bitcoin / Altcoins</a>.<br>Pay to read bbPress <a href="%s">Premium Topics</a> and read comments/replies, Pay to add new replies to the topic, Pay to create new topics on bbPress', GOURLBB), plugins_url("/images/newtopic.png", __FILE__), plugins_url("/images/newtopic.png", __FILE__)).'.<br>';
-				$tmp .= sprintf(__( 'Accept %s membership payments online in bbPress.', GOURLBB), ucwords(implode(", ", $this->coin_names))).'<br/>';
+				$tmp .= sprintf(__("You can mark some topics on your bbPress Forum / Customer support system as <a href='%s'>Premium</a> and can easily monetise your forum with <a href='%s'>Bitcoin / Altcoins</a>. Pay to read bbPress <a href='%s'>Premium Topics</a> and read comments/replies, Pay to add new replies to the premium topic, Pay to create new topics on bbPress", GOURLBB), plugins_url("/images/newtopic.png", __FILE__), "https://gourl.io/#coins", plugins_url("/images/newtopic.png", __FILE__)).'.<br>';
+				$tmp .= sprintf(__("Accept %s membership payments online in bbPress.", GOURLBB), ucwords(implode(", ", $this->coin_names))).'<br/>';
 				$tmp .= "</p><p>";
-				$tmp .= sprintf(__( '<a href="%s">Plugin Homepage</a> & <a href="%s">Screenshots &#187;</a>', GOURLBB), "https://gourl.io/bbpress-premium-membership.html", "https://gourl.io/bbpress-premium-membership.html#screenshot");
-				$tmp .= "</p>";
+				$tmp .= sprintf(__( "If you want to use GoUrl bbPress Premium Membership plugin in a language other than English, see the page <a href='%s'>Languages and Translations</a>", GOURLBB ), "https://gourl.io/languages.html");
+				$tmp .= "</p><p>";
+				$tmp .= sprintf(__( "<a href='%s'>Plugin Homepage</a> & <a href='%s'>Screenshots &#187;</a>", GOURLBB), "https://gourl.io/bbpress-premium-membership.html", "https://gourl.io/bbpress-premium-membership.html#screenshot");
+				$tmp .= "</p><br>";
 				$tmp .= "</th>";
 				$tmp .= "</tr>";
 	
@@ -426,17 +441,17 @@ if (!function_exists('gourl_bbp_gateway_load'))
 				{
 					$tmp .= "<tr valign='top'>";
 					$tmp .= "<th scope='row'><b>".__("Premium Users", GOURLBB ).":</b></th>";
-					$tmp .= '<td><a class="gourlbblink" href="'.GOURL_ADMIN.GOURL.'paypermembership_users">'.__('List of All Premium Users', GOURLBB).'</a></td>';
+					$tmp .= '<td><a class="gourlbblink" href="'.GOURL_ADMIN.GOURL.'paypermembership_users">'.__('List of All Premium Users', GOURLBB ).'</a></td>';
 					$tmp .= "</tr>";
 					
 					$tmp .= "<tr valign='top'>";
 					$tmp .= "<th scope='row'><b>".__("New Subscription", GOURLBB ).":</b></th>";
-					$tmp .= '<td>Manually create user &#160;<a class="gourlbblink" href="'.GOURL_ADMIN.GOURL.'paypermembership_user">'.__('Premium Membership', GOURLBB).'</a></td>';
+					$tmp .= '<td>'.__('Manually create user', GOURLBB).' - <a class="gourlbblink" href="'.GOURL_ADMIN.GOURL.'paypermembership_user">'.__('Premium Membership', GOURLBB).'</a></td>';
 					$tmp .= "</tr>";
 					
 					$tmp .= "<tr valign='top'>";
 					$tmp .= "<th scope='row'><b>".__("Payments", GOURLBB ).":</b></th>";
-					$tmp .= '<td>'.sprintf(__( 'All <a class="gourlbblink" href="%s">Membership Payments</a>', GOURLBB ), admin_url("admin.php?page=gourlpayments&s=membership")).'</td>';
+					$tmp .= '<td>'.sprintf(__( "All <a class='gourlbblink' href='%s'>Membership Payments</a>", GOURLBB ), admin_url("admin.php?page=gourlpayments&s=membership")).'</td>';
 					$tmp .= "</tr>";
 						
 					$s = $gourl->get_membership();
@@ -446,18 +461,22 @@ if (!function_exists('gourl_bbp_gateway_load'))
 					{
 						$tmp .= "<tr valign='top'>";
 						$tmp .= "<th colspan='2'>";
-						$tmp .= '<div class="error"><h3 style="color:red">'.__("Important", GOURLBB ).' -</h3><p>' .sprintf(__( 'Please change settings to <b>Lock Page Level</b>: "<a href="%s">Registered Subscribers/Contributors</a>" or higher. <a href="%s">Goto &#187;</a>', GOURLBB ), GOURL_ADMIN.GOURL."paypermembership#gourlform", GOURL_ADMIN.GOURL."paypermembership#gourlform").'</p></div><br><br>';
+						$tmp .= '<div class="error" style="border:1px solid red"><h3 style="color:red">'.__("Important", GOURLBB ).' -</h3><p>' .sprintf(__( "Please change settings to <b>Lock Page Level</b>: <a href='%s'>Registered Subscribers/Contributors</a> or higher. <a href='%s'>Goto &#187;</a>", GOURLBB ), GOURL_ADMIN.GOURL."paypermembership#gourlform", GOURL_ADMIN.GOURL."paypermembership#gourlform").'</p></div><br><br>';
 						$tmp .= "</th>";
 						$tmp .= "</tr>";
 					}
 					
 				}
-				elseif (class_exists('gourlclass') && defined('GOURL') && defined('GOURL_ADMIN') && is_object($gourl) && true === version_compare(GOURL_VERSION, '1.3', '<'))
+				elseif (class_exists('gourlclass') && defined('GOURL') && defined('GOURL_ADMIN') && is_object($gourl) && true === version_compare(GOURL_VERSION, '1.3.2', '<'))
 				{
 					$tmp .= "<tr valign='top'>";
 					$tmp .= "<th colspan='2'>";
-					$tmp .= "<h3 style='color:green'>".sprintf(__("Please install <a target='_blank' href='%s'>Bitcoin</a> Gateway", GOURLBB ), "https://bitcoin.org/")." -</h3>";
-					$tmp .= '<div class="error">' .sprintf(__( '<b>Your GoUrl Bitcoin Gateway <a href="%s">Main Plugin</a> version is too old. Requires 1.3 or higher version. Please <a href="%s">update</a> to latest version.</b>  &#160; &#160; &#160; &#160; Information: &#160; <a href="https://gourl.io/bitcoin-wordpress-plugin.html">Main Plugin Homepage</a> &#160; &#160; &#160; <a href="https://wordpress.org/plugins/gourl-bitcoin-payment-gateway-paid-downloads-membership/">WordPress.org Plugin Page</a>', GOURLBB ), GOURL_ADMIN.GOURL, admin_url("plugin-install.php?tab=search&type=term&s=GoUrl+Bitcoin+Payment+Gateway+Downloads")).'</div><br><br>';
+					
+					$tmp .= '<div class="error" style="border:1px solid red">'; 
+					$tmp .= "<h3 style='color:red'>".sprintf(__("Please install <a target='_blank' href='%s'>Bitcoin</a> Gateway", GOURLBB ), "https://bitcoin.org/")." -</h3>";
+					$tmp .= sprintf(__( "Your GoUrl Bitcoin Gateway <a href='%s'>Main Plugin</a> version is too old. Requires 1.3.2 or higher version. Please <a href='%s'>update</a> to latest version.", GOURLBB ), GOURL_ADMIN.GOURL, admin_url("plugin-install.php?tab=search&type=term&s=GoUrl+Bitcoin+Payment+Gateway+Downloads"));
+					$tmp .= '<br><br></div>';
+					
 					$tmp .= "</th>";
 					$tmp .= "</tr>";
 				}
@@ -465,8 +484,14 @@ if (!function_exists('gourl_bbp_gateway_load'))
 				{
 					$tmp .= "<tr valign='top'>";
 					$tmp .= "<th colspan='2'>";
-					$tmp .= "<h3 style='color:green'>".sprintf(__("Please install <a target='_blank' href='%s'>Bitcoin</a> Gateway", GOURLBB ), "https://bitcoin.org/")." -</h3>";
-					$tmp .= '<div class="error">' .sprintf(__( '<p><b>You need to install GoUrl Official Bitcoin Gateway for Wordpress also. &#160; Go to - &#160;<a href="%s">Automatic installation</a> &#160;or&#160; <a href="https://gourl.io/bitcoin-wordpress-plugin.html">Manual</a></b>.</p><p>Information: &#160; <a href="https://gourl.io/bitcoin-wordpress-plugin.html">Main Plugin Homepage</a> &#160; &#160; &#160; <a href="https://wordpress.org/plugins/gourl-bitcoin-payment-gateway-paid-downloads-membership/">WordPress.org Plugin Page</a></p>', GOURLBB ), admin_url("plugin-install.php?tab=search&type=term&s=GoUrl+Bitcoin+Payment+Gateway+Downloads")).'</div><br><br>';
+					
+					$tmp .= '<div class="error" style="border:1px solid red">';
+					$tmp .= "<h3 style='color:red'>".sprintf(__("Please install <a target='_blank' href='%s'>Bitcoin</a> Gateway", GOURLBB ), "https://bitcoin.org/")." -</h3>";
+					$tmp .= sprintf(__( "You need to install GoUrl Bitcoin Gateway Main Plugin also. Go to - <a href='%s'>Automatic installation</a> or <a href='%s'>Manual</a>.", GOURLBB ), admin_url("plugin-install.php?tab=search&type=term&s=GoUrl+Bitcoin+Payment+Gateway+Downloads"), "https://gourl.io/bitcoin-wordpress-plugin.html") . "</b> &#160; &#160; &#160; &#160; " .
+							"<br><br>" . __( 'Information', GOURLBB ) . ": &#160; &#160;<a href='https://gourl.io/bitcoin-wordpress-plugin.html'>".__( 'Main Plugin Homepage', GOURLBB )."</a> &#160; &#160; &#160; <a href='https://wordpress.org/plugins/gourl-bitcoin-payment-gateway-paid-downloads-membership/'>" .
+									__( 'WordPress.org Plugin Page', GOURLBB );
+					$tmp .= '<br><br></div>';
+						
 					$tmp .= "</th>";
 					$tmp .= "</tr>";
 				}
@@ -497,7 +522,7 @@ if (!function_exists('gourl_bbp_gateway_load'))
 				foreach ($this->fields as $k => $v)
 				{
 					$tmp .= "<tr valign='top'>";
-					$tmp .= "<th scope='row'><b>".__( $v, GOURLBB ).":</b></th>";
+					$tmp .= "<th scope='row'><b>".$v.":</b></th>";
 					$tmp .= "<td><input type='radio' name='free_".$k."' value='0'".$this->chk($this->free[$k], 0).">".__('All users', GOURLBB )." &#160; &#160; &#160; &#160; &#160; <input type='radio' name='free_".$k."' value='1'".$this->chk($this->free[$k], 1).">".__('Premium Users only', GOURLBB );
 					$tmp .= "</tr>";
 				}
@@ -510,7 +535,7 @@ if (!function_exists('gourl_bbp_gateway_load'))
 				foreach ($this->fields as $k => $v)
 				{
 					$tmp .= "<tr valign='top'>";
-					$tmp .= "<th scope='row'><b>".__( $v, GOURLBB ).":</b></th>";
+					$tmp .= "<th scope='row'><b>".$v.":</b></th>";
 					$tmp .= "<td><input type='radio' name='premium_".$k."' value='0'".$this->chk($this->premium[$k], 0).">".__('All users', GOURLBB )." &#160; &#160; &#160; &#160; &#160; <input type='radio' name='premium_".$k."' value='1'".$this->chk($this->premium[$k], 1).">".__('Premium Users only', GOURLBB );
 					$tmp .= "</tr>";
 				}
@@ -556,12 +581,12 @@ if (!function_exists('gourl_bbp_gateway_load'))
 					
 					$tmp .= "<tr valign='top'>";
 					$tmp .= "<th scope='row'><b>".__("Upgrade Membership For", GOURLBB ).":</b></th>";
-					$tmp .= "<td>".__("Users with following permissions/roles require premium membership -<br>Forum Roles: &#160; Spectator and Participant<br>with Website Roles", GOURLBB ).": &#160; <a class='gourlbblink' href='".GOURL_ADMIN.GOURL."paypermembership#gourlform'>".$lock_level_membership[$s["ppmLevel"]]."</a></td>";
+					$tmp .= "<td>".sprintf(__("Users with following permissions/roles require premium membership -<br>Forum Roles: &#160; Spectator and Participant<br>Website Roles: &#160; %s", GOURLBB ), "<a class='gourlbblink' href='".GOURL_ADMIN.GOURL."paypermembership#gourlform'>".$lock_level_membership[$s["ppmLevel"]]."</a>")."</td>";
 					$tmp .= "</tr>";
 					
 					$tmp .= "<tr valign='top'>";
 					$tmp .= "<th scope='row'><b>".__("Payment Box Style", GOURLBB ).":</b></th>";
-					$tmp .= '<td>'.sprintf(__( '<a target="_blank" href="%s">Sizes</a> and border <a target="_blank" href="%s">shadow</a> you can change <a class="gourlbblink" href="%s">here</a>', GOURLBB ), plugins_url("/images/sizes.png", __FILE__), plugins_url("/images/styles.png", __FILE__), GOURL_ADMIN.GOURL."settings#gourlvericoinprivate_key").'</td>';
+					$tmp .= '<td>'.sprintf(__( "Payment Box <a target='_blank' href='%s'>sizes</a> and border <a target='_blank' href='%s'>shadow</a> you can change <a class='gourlbblink' href='%s'>here</a>", GOURLBB ), plugins_url("/images/sizes.png", __FILE__), plugins_url("/images/styles.png", __FILE__), GOURL_ADMIN.GOURL."settings#gourlpeercoinprivate_key").'</td>';
 					$tmp .= "</tr>";
 				}	
 				
@@ -575,10 +600,10 @@ if (!function_exists('gourl_bbp_gateway_load'))
 				foreach ($this->texts2 as $k => $v)
 				{
 					$tmp .= "<tr valign='top'>";
-					$tmp .= "<th scope='row'><b>".__($v, GOURLBB ).":</b></th>";
+					$tmp .= "<th scope='row'><b>".$v.":</b></th>";
 					if (strpos($k, "create_") === 0) $tmp .= '<td style="max-width:600px"><textarea name="'.$k.'" id="'.$k.'" class="widefat" style="height:80px;">'.htmlspecialchars($this->texts[$k], ENT_QUOTES).'</textarea>';
 					else $tmp .= '<td><input type="text" name="'.$k.'" id="'.$k.'" value="'.htmlspecialchars($this->texts[$k], ENT_QUOTES).'" class="widefat">';
-					$tmp .= '<p>'.htmlspecialchars(__('Default: '.$this->def[$k], GOURLBB), ENT_QUOTES).'</p></td>';
+					$tmp .= '<p>'.htmlspecialchars(sprintf(__('Default: %s', GOURLBB), $this->def[$k]), ENT_QUOTES).'</p></td>';
 					$tmp .= "</tr>";
 						
 				}		
@@ -586,7 +611,7 @@ if (!function_exists('gourl_bbp_gateway_load'))
 				
 				$tmp .= "<tr valign='top'>";
 				$tmp .= "<th colspan='2'><br><br><br>";
-				$tmp .= "<input type='submit' class='button button-primary' name='submit' value='".__('Save Settings', GOURLBB)."'> &#160; &#160; &#160; ";
+				$tmp .= "<input type='submit' class='button button-primary' name='submit' value='".__('Save Settings', GOURLBB)."'>";
 				$tmp .= "<br><br></th>";
 				$tmp .= "</tr>";
 				$tmp .= "</table>";
@@ -609,7 +634,7 @@ if (!function_exists('gourl_bbp_gateway_load'))
 			*/
 			public function admin_footer_text()
 			{
-				return sprintf( __( 'If you like <strong>bbPress Forum - Premium Membership Mode</strong> please leave us a <a href="%1$s" target="_blank">&#9733;&#9733;&#9733;&#9733;&#9733;</a> rating on <a href="%1$s" target="_blank">WordPress.org</a>. A huge thank you from GoUrl.io in advance!', GOURLBB ), 'https://wordpress.org/support/view/plugin-reviews/gourl-bbpress-premium-membership-bitcoin-payments?filter=5#postform');
+	    		return sprintf( __( "If you like <b>bbPress Forum - Premium Membership Mode</b> please leave us a %s rating on %s. A huge thank you from GoUrl in advance!", GOURLBB ), "<a href='https://wordpress.org/support/view/plugin-reviews/gourl-bbpress-premium-membership-bitcoin-payments?filter=5#postform' target='_blank'>&#9733;&#9733;&#9733;&#9733;&#9733;</a>", "<a href='https://wordpress.org/support/view/plugin-reviews/gourl-bbpress-premium-membership-bitcoin-payments?filter=5#postform' target='_blank'>WordPress.org</a>");
 			}
 	
 	
@@ -874,6 +899,6 @@ if (!function_exists('gourl_bbp_gateway_load'))
 		if (class_exists('bbPress')) new GoUrl_Bbpress;
 	
 	}
-	// end gourl_bbp_gateway_load()                   
+	// end gourl_bb_gateway_load()
 	
 }
