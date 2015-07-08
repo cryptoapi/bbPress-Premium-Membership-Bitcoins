@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: GoUrl BBPRESS - Add Premium Membership with Bitcoin/"
 "Altcoin Payments\n"
-"POT-Creation-Date: 2015-05-26 12:00-0000\n"
-"PO-Revision-Date: 2015-05-26 12:00-0000\n"
+"POT-Creation-Date: 2015-07-08 16:19-0000\n"
+"PO-Revision-Date: 2015-07-08 16:19-0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: ru\n"
@@ -21,43 +21,43 @@ msgstr ""
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: *.js\n"
 
-#: gourl_bbpress.php:62
+#: gourl_bbpress.php:63
 msgid "Read First Post in the Topic"
 msgstr "Читать первый пост в теме"
 
-#: gourl_bbpress.php:62
+#: gourl_bbpress.php:63
 msgid "Read Comments/Replies"
 msgstr "Читать комментарии/ответы"
 
-#: gourl_bbpress.php:62
+#: gourl_bbpress.php:63
 msgid "Add Comments/Replies"
 msgstr "Добавить комментарии/ответы"
 
-#: gourl_bbpress.php:64
+#: gourl_bbpress.php:65
 msgid "Premium:"
 msgstr "Премиум:"
 
-#: gourl_bbpress.php:65
+#: gourl_bbpress.php:66
 msgid "You must be logged in to view this post."
 msgstr "Вы должны быть авторизованы для просмотра этого поста."
 
-#: gourl_bbpress.php:66
+#: gourl_bbpress.php:67
 msgid "You need to have a premium account to view this post."
 msgstr "Вам нужно иметь премиум-аккаунт для просмотра этого поста."
 
-#: gourl_bbpress.php:68
+#: gourl_bbpress.php:69
 msgid "You must be logged in to view this response."
 msgstr "Вы должны авторизоваться для просмотра этого ответа."
 
-#: gourl_bbpress.php:69
+#: gourl_bbpress.php:70
 msgid "You need to have a premium account to view this response."
 msgstr "Вам нужно иметь премиум-аккаунт для просмотра этого ответа."
 
-#: gourl_bbpress.php:71
+#: gourl_bbpress.php:72
 msgid "You must be logged in to create new topics."
 msgstr "Вы должны авторизоваться для создания новых тем."
 
-#: gourl_bbpress.php:72
+#: gourl_bbpress.php:73
 #, php-format
 msgid ""
 "You need to have a premium account to create new topic. Buy premium "
@@ -68,11 +68,11 @@ msgstr ""
 "членство, используя безопасные анонимные платежи с биткоинами. Что такое <a "
 "href='%s'>Биткоин</a>?"
 
-#: gourl_bbpress.php:74
+#: gourl_bbpress.php:75
 msgid "You must be logged in to reply to this topic."
 msgstr "Вы должны войти в систему для ответа в этой теме."
 
-#: gourl_bbpress.php:75
+#: gourl_bbpress.php:76
 #, php-format
 msgid ""
 "You need to have a premium account to post messages on this topic. Buy "
@@ -83,116 +83,116 @@ msgstr ""
 "премиум-аккаунт, используя безопасные анонимные платежи с биткоинами. Что "
 "такое <a href='%s'>Биткоин</a>?"
 
-#: gourl_bbpress.php:77 gourl_bbpress.php:78
+#: gourl_bbpress.php:78 gourl_bbpress.php:79
 msgid "Join today!"
 msgstr "Присоединяйтесь сегодня!"
 
-#: gourl_bbpress.php:80
+#: gourl_bbpress.php:81
 msgid "Reply"
 msgstr "Ответить"
 
-#: gourl_bbpress.php:81
+#: gourl_bbpress.php:82
 msgid "New Topic"
 msgstr "Новая Тема"
 
-#: gourl_bbpress.php:84
+#: gourl_bbpress.php:85
 msgid "Add to Premium Topic Title"
 msgstr "Добавить в название премиум темы"
 
-#: gourl_bbpress.php:85
+#: gourl_bbpress.php:86
 msgid "Topic - First Post (Not Logged User)"
 msgstr "Тема - первый пост (не зарегистрированный пользователь)"
 
-#: gourl_bbpress.php:86
+#: gourl_bbpress.php:87
 msgid "Topic - First Post (Logged User)"
 msgstr "Тема - первый пост (зарегистрированный пользователь)"
 
-#: gourl_bbpress.php:88
+#: gourl_bbpress.php:89
 msgid "Topic - Replies (Not Logged User)"
 msgstr "Тема - ответы (не зарегистрированный пользователь)"
 
-#: gourl_bbpress.php:89
+#: gourl_bbpress.php:90
 msgid "Topic - Replies (Logged User)"
 msgstr "Тема - ответы (зарегистрированный пользователь)"
 
-#: gourl_bbpress.php:91
+#: gourl_bbpress.php:92
 msgid "Create Topic (Not Logged User)"
 msgstr "Создание темы (не зарегистрированный пользователь)"
 
-#: gourl_bbpress.php:92
+#: gourl_bbpress.php:93
 msgid "Create Topic (Logged User)"
 msgstr "Создание темы (зарегистрированный пользователь)"
 
-#: gourl_bbpress.php:94
+#: gourl_bbpress.php:95
 msgid "Add Reply (Not Logged User)"
 msgstr "Добавить ответ (не зарегистрированный пользователь)"
 
-#: gourl_bbpress.php:95
+#: gourl_bbpress.php:96
 msgid "Add Reply (Logged User)"
 msgstr "Добавить ответ (зарегистрированный пользователь)"
 
-#: gourl_bbpress.php:97
+#: gourl_bbpress.php:98
 msgid "Login Link Text"
 msgstr "Текст ссылки для входа на сайт"
 
-#: gourl_bbpress.php:98
+#: gourl_bbpress.php:99
 msgid "Payment Link Text"
 msgstr "Текст ссылки оплаты"
 
-#: gourl_bbpress.php:100
+#: gourl_bbpress.php:101
 msgid "Reply Button"
 msgstr "Кнопка Ответа"
 
-#: gourl_bbpress.php:101
+#: gourl_bbpress.php:102
 msgid "New Topic Button"
 msgstr "Новая тема кнопка"
 
-#: gourl_bbpress.php:162
+#: gourl_bbpress.php:163
 msgid "Settings"
 msgstr "Настройки"
 
-#: gourl_bbpress.php:176
+#: gourl_bbpress.php:177
 msgid "Premium Settings"
 msgstr "Премиум Настройки"
 
-#: gourl_bbpress.php:178 gourl_bbpress.php:513
+#: gourl_bbpress.php:179 gourl_bbpress.php:514
 msgid "Premium"
 msgstr "Премиум"
 
-#: gourl_bbpress.php:202 gourl_bbpress.php:217
+#: gourl_bbpress.php:203 gourl_bbpress.php:218 gourl_bbpress.php:238
 msgid "Premium Topic"
 msgstr "Премиум тема"
 
-#: gourl_bbpress.php:218
+#: gourl_bbpress.php:219
 msgid "No Premium"
 msgstr "Не премиум"
 
-#: gourl_bbpress.php:238
+#: gourl_bbpress.php:239
 msgid "No"
 msgstr "Нет"
 
-#: gourl_bbpress.php:238
+#: gourl_bbpress.php:239
 msgid "Yes"
 msgstr "Да"
 
-#: gourl_bbpress.php:239
+#: gourl_bbpress.php:240
 #, php-format
 msgid "<a href='%s'>More settings</a>"
 msgstr "<a href='%s'>Ещё настройки</a>"
 
-#: gourl_bbpress.php:415
+#: gourl_bbpress.php:416
 msgid "BBPRESS Forum - Premium Settings"
 msgstr "BBPRESS форум - Премиум Настройки"
 
-#: gourl_bbpress.php:416
+#: gourl_bbpress.php:417
 msgid "Bitcoin Payment Gateway for Your Website"
 msgstr "Биткоин платёжный шлюз для вашего сайта"
 
-#: gourl_bbpress.php:419
+#: gourl_bbpress.php:420
 msgid "Settings has been saved <strong>successfully</strong>"
 msgstr "Настройки <strong>успешно</strong> сохранены"
 
-#: gourl_bbpress.php:430
+#: gourl_bbpress.php:431
 #, php-format
 msgid ""
 "You can mark some topics on your bbPress Forum / Customer support system as "
@@ -207,12 +207,12 @@ msgstr ""
 "<a href='%s'>Премиум тем</a>, комментариев и ответов, оплата за добавление "
 "новых ответов в премиум тему, оплата за создание новых тем на bbPress"
 
-#: gourl_bbpress.php:431
+#: gourl_bbpress.php:432
 #, php-format
 msgid "Accept %s membership payments online in bbPress."
 msgstr "Принимайте %s платежи онлайн в bbPress."
 
-#: gourl_bbpress.php:433
+#: gourl_bbpress.php:434
 #, php-format
 msgid ""
 "If you want to use GoUrl bbPress Premium Membership plugin in a language "
@@ -222,46 +222,46 @@ msgstr ""
 "другом языке, чем русский, смотрите страницу <a href='%s'>языки и переводы</"
 "a>"
 
-#: gourl_bbpress.php:435
+#: gourl_bbpress.php:436
 #, php-format
 msgid "<a href='%s'>Plugin Homepage</a> & <a href='%s'>Screenshots &#187;</a>"
 msgstr ""
 "<a href='%s'>Домашняя страница плагина</a> & <a href='%s'>скриншоты »</a>"
 
-#: gourl_bbpress.php:443
+#: gourl_bbpress.php:444
 msgid "Premium Users"
 msgstr "Премиум пользователи"
 
-#: gourl_bbpress.php:444
+#: gourl_bbpress.php:445
 msgid "List of All Premium Users"
 msgstr "Список всех премиум пользователей"
 
-#: gourl_bbpress.php:448
+#: gourl_bbpress.php:449
 msgid "New Subscription"
 msgstr "Новая подписка"
 
-#: gourl_bbpress.php:449
+#: gourl_bbpress.php:450
 msgid "Manually create user"
 msgstr "Вручную добавить пользователю"
 
-#: gourl_bbpress.php:449
+#: gourl_bbpress.php:450
 msgid "Premium Membership"
 msgstr "Премиум членство"
 
-#: gourl_bbpress.php:453
+#: gourl_bbpress.php:454
 msgid "Payments"
 msgstr "Платежи"
 
-#: gourl_bbpress.php:454
+#: gourl_bbpress.php:455
 #, php-format
 msgid "All <a class='gourlbblink' href='%s'>Membership Payments</a>"
 msgstr "Все <a class='gourlbblink' href='%s'>платежи за членство на сайте</a>"
 
-#: gourl_bbpress.php:464
+#: gourl_bbpress.php:465
 msgid "Important"
 msgstr "Важно"
 
-#: gourl_bbpress.php:464
+#: gourl_bbpress.php:465
 #, php-format
 msgid ""
 "Please change settings to <b>Lock Page Level</b>: <a href='%s'>Registered "
@@ -271,23 +271,23 @@ msgstr ""
 "href='%s'>Registered Subscribers/Contributors</a> или выше. <a "
 "href='%s'>Перейти »</a>"
 
-#: gourl_bbpress.php:476 gourl_bbpress.php:489
+#: gourl_bbpress.php:477 gourl_bbpress.php:490
 #, php-format
 msgid "Please install <a target='_blank' href='%s'>Bitcoin</a> Gateway"
 msgstr "Пожалуйста, установите <a target='_blank' href='%s'>Биткоин</a> шлюз"
 
-#: gourl_bbpress.php:477
+#: gourl_bbpress.php:478
 #, php-format
 msgid ""
 "Your GoUrl Bitcoin Gateway <a href='%s'>Main Plugin</a> version is too old. "
-"Requires 1.3.2 or higher version. Please <a href='%s'>update</a> to latest "
+"Requires 1.3.3 or higher version. Please <a href='%s'>update</a> to latest "
 "version."
 msgstr ""
 "Версия <a href='%s'>GoUrl главного плагина</a> слишком стара. Требуется "
-"версия 1.3.2 или выше. Пожалуйста, <a href='%s'>обновите</a> до последней "
+"версия 1.3.3 или выше. Пожалуйста, <a href='%s'>обновите</a> до последней "
 "версии."
 
-#: gourl_bbpress.php:490
+#: gourl_bbpress.php:491
 #, php-format
 msgid ""
 "You need to install GoUrl Bitcoin Gateway Main Plugin also. Go to - <a "
@@ -297,91 +297,91 @@ msgstr ""
 "<a href='%s'>Автоматическая установка</a> или <a href='%s'>ручная установка</"
 "a>."
 
-#: gourl_bbpress.php:491
+#: gourl_bbpress.php:492
 msgid "Information"
 msgstr "Информация"
 
-#: gourl_bbpress.php:491
+#: gourl_bbpress.php:492
 msgid "Main Plugin Homepage"
 msgstr "Страница главного плагина"
 
-#: gourl_bbpress.php:492
+#: gourl_bbpress.php:493
 msgid "WordPress.org Plugin Page"
 msgstr "Страница плагина на WordPress.org"
 
-#: gourl_bbpress.php:503
+#: gourl_bbpress.php:504
 msgid "New Topics in bbPress"
 msgstr "Новые темы в bbPress"
 
-#: gourl_bbpress.php:507
+#: gourl_bbpress.php:508
 msgid "Who can Create Topics"
 msgstr "Кто может создавать темы"
 
-#: gourl_bbpress.php:508 gourl_bbpress.php:526 gourl_bbpress.php:539
+#: gourl_bbpress.php:509 gourl_bbpress.php:527 gourl_bbpress.php:540
 msgid "All users"
 msgstr "Все пользователи"
 
-#: gourl_bbpress.php:508 gourl_bbpress.php:526 gourl_bbpress.php:539
+#: gourl_bbpress.php:509 gourl_bbpress.php:527 gourl_bbpress.php:540
 msgid "Premium Users only"
 msgstr "Премиум пользователи только"
 
-#: gourl_bbpress.php:512
+#: gourl_bbpress.php:513
 msgid "Default New Topic"
 msgstr "Новая тема по умолчанию"
 
-#: gourl_bbpress.php:513
+#: gourl_bbpress.php:514
 msgid "Non-Premium"
 msgstr "Не премиум"
 
-#: gourl_bbpress.php:519
+#: gourl_bbpress.php:520
 msgid "Non-premium Topics in bbPress"
 msgstr "Не премиум темы в bbPress"
 
-#: gourl_bbpress.php:532
+#: gourl_bbpress.php:533
 msgid "Premium Topics in bbPress"
 msgstr "Премиум темы в bbPress"
 
-#: gourl_bbpress.php:548
+#: gourl_bbpress.php:549
 msgid "Page"
 msgstr "Страница"
 
-#: gourl_bbpress.php:552
+#: gourl_bbpress.php:553
 msgid "Payment/Checkout Page"
 msgstr "Страница оплаты"
 
-#: gourl_bbpress.php:556
+#: gourl_bbpress.php:557
 msgid "-- Choose One --"
 msgstr "-- Выберите один --"
 
-#: gourl_bbpress.php:561
+#: gourl_bbpress.php:562
 msgid "edit page"
 msgstr "редактирование"
 
-#: gourl_bbpress.php:562
+#: gourl_bbpress.php:563
 msgid "view page"
 msgstr "просмотр страницы"
 
-#: gourl_bbpress.php:564
+#: gourl_bbpress.php:565
 msgid "Include the shortcode"
 msgstr "Включить шорткод"
 
-#: gourl_bbpress.php:570
+#: gourl_bbpress.php:571
 msgid "Payment Box"
 msgstr "Payment Box"
 
-#: gourl_bbpress.php:574 gourl_bbpress.php:575
+#: gourl_bbpress.php:575 gourl_bbpress.php:576
 msgid "per"
 msgstr "за"
 
-#: gourl_bbpress.php:578
+#: gourl_bbpress.php:579
 msgid "Price"
 msgstr "Цена"
 
-#: gourl_bbpress.php:583
+#: gourl_bbpress.php:584
 msgid "Upgrade Membership For"
 msgstr "Обновление членства для"
 
-#: gourl_bbpress.php:584
+#: gourl_bbpress.php:585
 #, php-format
 msgid ""
 "Users with following permissions/roles require premium membership -<br>Forum "
@@ -391,11 +391,11 @@ msgstr ""
 "<br>Форум роли: Spectator and Participant (зрители и участники)<br>Вебсайт "
 "роли: &#160; %s"
 
-#: gourl_bbpress.php:588
+#: gourl_bbpress.php:589
 msgid "Payment Box Style"
 msgstr "Стиль Payment Box"
 
-#: gourl_bbpress.php:589
+#: gourl_bbpress.php:590
 #, php-format
 msgid ""
 "Payment Box <a target='_blank' href='%s'>sizes</a> and border <a "
@@ -406,20 +406,20 @@ msgstr ""
 "target='_blank' href='%s'>с тенями</a> вы можете изменить <a "
 "class='gourlbblink' href='%s'>здесь</a>"
 
-#: gourl_bbpress.php:595
+#: gourl_bbpress.php:596
 msgid "Customize Texts"
 msgstr "Настройка текстов"
 
-#: gourl_bbpress.php:606
+#: gourl_bbpress.php:607
 #, php-format
 msgid "Default: %s"
 msgstr "По умолчанию: %s"
 
-#: gourl_bbpress.php:614
+#: gourl_bbpress.php:615
 msgid "Save Settings"
 msgstr "Сохранить настройки"
 
-#: gourl_bbpress.php:637
+#: gourl_bbpress.php:638
 #, php-format
 msgid ""
 "If you like <b>bbPress Forum - Premium Membership Mode</b> please leave us a "

@@ -3,7 +3,7 @@
 Plugin Name: 		GoUrl BBPRESS - Add Premium Membership with Bitcoin/Altcoin Payments
 Plugin URI: 		https://gourl.io/bbpress-premium-membership.html
 Description: 		This plugin will add Premium Membership and Bitcoin Gateway to bbPress 2.5+ Forum / Customer Support System. You can mark some topics on your forum/customer support system as Premium and can easily monetise it with Bitcoins/altcoins. Pay to read bbPress Premium Topics and Replies, Pay to add new replies to the topic, Pay to create new topics on bbPress
-Version: 			1.1.1
+Version: 			1.1.2
 Author: 			GoUrl.io
 Author URI: 		https://gourl.io
 License: 			GPLv2
@@ -18,6 +18,7 @@ if (!function_exists('gourl_bb_gateway_load'))
 {
 	// gateway load
 	add_action( 'plugins_loaded', 	'gourl_bb_gateway_load', 20);
+	// localisation load 
 	add_action( 'plugins_loaded', 	'gourl_bb_load_textdomain' );
 	
 	DEFINE('GOURLBB', "gourl-bbpress");
@@ -326,7 +327,7 @@ if (!function_exists('gourl_bb_gateway_load'))
 					$this->premium[$k] = intval($v); 
 				} 
 				
-				if (class_exists('gourlclass') && defined('GOURL') && defined('GOURL_ADMIN') && is_object($gourl) && true === version_compare(GOURL_VERSION, '1.3.2', '>='))
+				if (class_exists('gourlclass') && defined('GOURL') && defined('GOURL_ADMIN') && is_object($gourl) && true === version_compare(GOURL_VERSION, '1.3.3', '>='))
 				{
 						$this->payments 			= $gourl->payments(); 		// Activated Payments
 						$this->coin_names			= $gourl->coin_names(); 	// All Coins
@@ -467,14 +468,14 @@ if (!function_exists('gourl_bb_gateway_load'))
 					}
 					
 				}
-				elseif (class_exists('gourlclass') && defined('GOURL') && defined('GOURL_ADMIN') && is_object($gourl) && true === version_compare(GOURL_VERSION, '1.3.2', '<'))
+				elseif (class_exists('gourlclass') && defined('GOURL') && defined('GOURL_ADMIN') && is_object($gourl) && true === version_compare(GOURL_VERSION, '1.3.3', '<'))
 				{
 					$tmp .= "<tr valign='top'>";
 					$tmp .= "<th colspan='2'>";
 					
 					$tmp .= '<div class="error" style="border:1px solid red">'; 
 					$tmp .= "<h3 style='color:red'>".sprintf(__("Please install <a target='_blank' href='%s'>Bitcoin</a> Gateway", GOURLBB ), "https://bitcoin.org/")." -</h3>";
-					$tmp .= sprintf(__( "Your GoUrl Bitcoin Gateway <a href='%s'>Main Plugin</a> version is too old. Requires 1.3.2 or higher version. Please <a href='%s'>update</a> to latest version.", GOURLBB ), GOURL_ADMIN.GOURL, admin_url("plugin-install.php?tab=search&type=term&s=GoUrl+Bitcoin+Payment+Gateway+Downloads"));
+					$tmp .= sprintf(__( "Your GoUrl Bitcoin Gateway <a href='%s'>Main Plugin</a> version is too old. Requires 1.3.3 or higher version. Please <a href='%s'>update</a> to latest version.", GOURLBB ), GOURL_ADMIN.GOURL, admin_url("plugin-install.php?tab=search&type=term&s=GoUrl+Bitcoin+Payment+Gateway+Downloads"));
 					$tmp .= '<br><br></div>';
 					
 					$tmp .= "</th>";
@@ -586,7 +587,7 @@ if (!function_exists('gourl_bb_gateway_load'))
 					
 					$tmp .= "<tr valign='top'>";
 					$tmp .= "<th scope='row'><b>".__("Payment Box Style", GOURLBB ).":</b></th>";
-					$tmp .= '<td>'.sprintf(__( "Payment Box <a target='_blank' href='%s'>sizes</a> and border <a target='_blank' href='%s'>shadow</a> you can change <a class='gourlbblink' href='%s'>here</a>", GOURLBB ), plugins_url("/images/sizes.png", __FILE__), plugins_url("/images/styles.png", __FILE__), GOURL_ADMIN.GOURL."settings#gourlpeercoinprivate_key").'</td>';
+					$tmp .= '<td>'.sprintf(__( "Payment Box <a target='_blank' href='%s'>sizes</a> and border <a target='_blank' href='%s'>shadow</a> you can change <a class='gourlbblink' href='%s'>here</a>", GOURLBB ), plugins_url("/images/sizes.png", __FILE__), plugins_url("/images/styles.png", __FILE__), GOURL_ADMIN.GOURL."settings#gourlmonetaryunitprivate_key").'</td>';
 					$tmp .= "</tr>";
 				}	
 				
@@ -899,6 +900,6 @@ if (!function_exists('gourl_bb_gateway_load'))
 		if (class_exists('bbPress')) new GoUrl_Bbpress;
 	
 	}
-	// end gourl_bb_gateway_load()
+	// end gourl_bb_gateway_load()   
 	
 }
