@@ -3,7 +3,7 @@
 Plugin Name: 		GoUrl BBPRESS - Add Premium Membership with Bitcoin/Altcoin Payments
 Plugin URI: 		https://gourl.io/bbpress-premium-membership.html
 Description: 		This plugin will add Premium Membership and Bitcoin Gateway to bbPress 2.5+ Forum / Customer Support System. You can mark some topics on your forum/customer support system as Premium and can easily monetise it with Bitcoins/altcoins. Pay to read bbPress Premium Topics and Replies, Pay to add new replies to the topic, Pay to create new topics on bbPress
-Version: 			1.1.2
+Version: 			1.1.3
 Author: 			GoUrl.io
 Author URI: 		https://gourl.io
 License: 			GPLv2

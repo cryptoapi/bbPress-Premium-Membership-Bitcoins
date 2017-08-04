@@ -3,10 +3,10 @@ Contributors: gourl, GoUrl.io
 Plugin Name: GoUrl BBPRESS - Add Premium Membership with Bitcoin/Altcoin Payments
 Plugin URI: https://gourl.io/bbpress-premium-membership.html
 Author URI: https://gourl.io 
-Tags: bbpress, bitcoin, bitcoins, bitcoin payment, bitcoin payments, gourl, cryptocurrency, btc, paypal, bbpress, bbpress payments, bbpress paypal, bbpress premium membership, bbpress membership, bbpress bitcoin, discussion, buddypress, forums, forum, Akismet, discussion, forums, multisite, support, theme, litecoin, dogecoin, darkcoin, dash, speedcoin, vertcoin, reddcoin, feathercoin, vericoin, potcoin, paycoin, monetaryunit, peercoin
+Tags: bbpress, bitcoin, bitcoincash, bitcoin cash, bitcoins, bitcoin payment, bitcoin payments, gourl, cryptocurrency, btc, paypal, bbpress, bbpress payments, bbpress paypal, bbpress premium membership, bbpress membership, bbpress bitcoin, discussion, buddypress, forums, forum, Akismet, discussion, forums, multisite, support, theme, litecoin, dogecoin, darkcoin, dash, speedcoin, vertcoin, reddcoin, feathercoin, potcoin, monetaryunit, peercoin
 Requires at least: 3.5
-Tested up to: 4.3
-Stable Tag: 1.1.2
+Tested up to: 4.9
+Stable Tag: 1.1.3
 License: GNU Version 2 or Any Later Version
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -25,7 +25,7 @@ bbPress Premium Membership Features -
 
 * 100% Free Open Source Plugin on [Github.com](https://github.com/cryptoapi/bbPress-Premium-Membership-Bitcoins). 
 * Provides a Premium Membership Mode and Bitcoin/Altcoin Payment Gateway for [bbPress 2.5 or higher](https://wordpress.org/plugins/bbpress/). 
-* Accept Bitcoin, Litecoin, Paycoin, Dogecoin, Dash, Speedcoin, Reddcoin, Potcoin, Feathercoin, Vertcoin, Vericoin, Peercoin, MonetaryUnit payments in bbPress. 
+* Accept Bitcoin, BitcoinCash, Litecoin, Dash, Dogecoin, Speedcoin, Reddcoin, Potcoin, Feathercoin, Vertcoin, Peercoin, MonetaryUnit payments in bbPress. 
 * No Monthly Fee, Transaction Fee from 0%. 
 * Pay to read bbPress Premium Topics and Replies. 
 * Pay to add new replies / create new Topics. 
@@ -89,6 +89,9 @@ In the search field type "GoUrl bbPress" and click Search Plugins. Once you've f
 
 == Changelog ==
 
+= 1.1.3 =
+* Added Bitcoin Cash (BCH / BCC)
+
 = 1.1.2 =
 Add MonetaryUnit [MUE] cryptocurrency
 
@@ -102,3 +105,4 @@ Localisation - You can easy change/localize any text in plugin
 = 1.0.0 =
 Initial Release
  
+    
