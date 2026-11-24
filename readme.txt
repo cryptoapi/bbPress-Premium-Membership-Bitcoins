@@ -5,8 +5,8 @@ Plugin URI: https://gourl.io/bbpress-premium-membership.html
 Author URI: https://gourl.io 
 Tags: bbpress, bitcoin, bitcoincash, bitcoin cash, bitcoins, bitcoin payment, bitcoin payments, gourl, cryptocurrency, btc, paypal, bbpress, bbpress payments, bbpress paypal, bbpress premium membership, bbpress membership, bbpress bitcoin, discussion, buddypress, forums, forum, Akismet, discussion, forums, multisite, support, theme, litecoin, dogecoin, darkcoin, dash, speedcoin, vertcoin, reddcoin, feathercoin, potcoin, monetaryunit, peercoin
 Requires at least: 3.5
-Tested up to: 4.9
-Stable Tag: 1.1.3
+Tested up to: 7.2
+Stable Tag: 1.1.4
 License: GNU Version 2 or Any Later Version
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -88,6 +88,9 @@ In the search field type "GoUrl bbPress" and click Search Plugins. Once you've f
 
 
 == Changelog ==
+
+= 1.1.4 =
+* Security fix
 
 = 1.1.3 =
 * Added Bitcoin Cash (BCH / BCC)

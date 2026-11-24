@@ -3,7 +3,7 @@
 Plugin Name: 		GoUrl BBPRESS - Add Premium Membership with Bitcoin/Altcoin Payments
 Plugin URI: 		https://gourl.io/bbpress-premium-membership.html
 Description: 		This plugin will add Premium Membership and Bitcoin Gateway to bbPress 2.5+ Forum / Customer Support System. You can mark some topics on your forum/customer support system as Premium and can easily monetise it with Bitcoins/altcoins. Pay to read bbPress Premium Topics and Replies, Pay to add new replies to the topic, Pay to create new topics on bbPress
-Version: 			1.1.3
+Version: 			1.1.4
 Author: 			GoUrl.io
 Author URI: 		https://gourl.io
 License: 			GPLv2
@@ -12,7 +12,7 @@ GitHub Plugin URI: 	https://github.com/cryptoapi/bbPress-Premium-Membership-Bitc
 */
 
 
-if (!defined( 'ABSPATH' )) exit;  // Exit if accessed directly in wordpress
+if (!defined( 'ABSPATH' )) exit;  // Exit if accessed directly in wordpress  
 
 if (!function_exists('gourl_bb_gateway_load'))
 {
@@ -106,12 +106,12 @@ if (!function_exists('gourl_bb_gateway_load'))
 				
 				$this->def = $this->texts;
 				
-				if (is_admin()) 
+				if (is_admin() && current_user_can( 'add_users' )) 
 				{
 					if (isset($_GET["page"]) && $_GET["page"] == "bbpress_premium" && isset($_GET["post_type"]) && $_GET["post_type"] == "forum" && strpos($_SERVER["SCRIPT_NAME"], "edit.php"))
 					{
 						if (isset($_POST["free_read_topic"]) && isset($_POST["free_read_topic"])) $this->save_settings();
-						add_action( 'admin_footer_text', array(&$this, 'admin_footer_text'), 25);
+						// add_action( 'admin_footer_text', array(&$this, 'admin_footer_text'), 25);
 					}
 					
 					add_action('admin_menu', array( &$this, 'admin_menu'));
